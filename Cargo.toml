@@ -8,3 +8,6 @@ rand = ["dep:rand"]
 
 [dependencies]
 rand = { version = "0.9", optional = true }
+
+[dev-dependencies]
+rand = { version = "0.9" }
