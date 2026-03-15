@@ -1,3 +1,7 @@
+//! # Reservoir
+//!
+//! `reservoir` is a simple reservoir sampling crate. use the `rand` feature to enable the simple `gather` method, or use your own rng
+
 pub struct Reservoir<T, const N: usize> {
     pub data: [Option<T>; N],
     pub count: usize,
@@ -33,6 +37,7 @@ impl<T, const N: usize> Reservoir<T, N> {
             self.count += 1;
         }
     }
+    /// Requires the `rand` feature to be enabled
     #[cfg(feature = "rand")]
     pub fn gather(&mut self, sample: T) {
         self.gather_precise(sample, |c| rand::random_range(0..c + 1));
