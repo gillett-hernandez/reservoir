@@ -17,7 +17,7 @@ impl<T, const N: usize> Default for Reservoir<T, N> {
 
 impl<T> Reservoir<T, 1> {
     /// panics if the reservoir does not contain anything
-    fn unwrap(&self) -> &T {
+    pub fn unwrap(&self) -> &T {
         self.data[0].as_ref().unwrap()
     }
 }
